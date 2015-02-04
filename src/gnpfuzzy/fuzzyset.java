@@ -5,19 +5,12 @@
  */
 package gnpfuzzy;
 
-import gnpfuzzy.test.test2;
-
 /**
  *
  * @author wirarama
  */
-public class GNPfuzzy {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-        test2.test2();
-    }
+public class fuzzyset {
+    public String name;
+    public fuzzyvar[] var;
+    public fuzzyrule[] rule;
 }

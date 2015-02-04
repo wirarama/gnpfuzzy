@@ -44,6 +44,17 @@ public class arrayfunction {
         }
         return out;
     }
+    public static double[] bachsort2(double start,double end,int amount){
+        double[] out = new double[amount+1];
+        double inc = (end-start)/(double)amount;
+        int j = 0;
+        while(start<=end){
+            out[j] = start+inc;
+            start = out[j];
+            j++;
+        }
+        return out;
+    }
     public static double[] cleanarray(double[] data,int length){
         double[] newdata = new double[length];
         System.arraycopy(data, 0, newdata, 0, length);

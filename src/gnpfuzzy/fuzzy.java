@@ -5,6 +5,7 @@
  */
 package gnpfuzzy;
 
+import java.util.ArrayList;
 import net.jodk.lang.FastMath;
 
 /**
@@ -102,11 +103,31 @@ public class fuzzy {
             }
             data[i][0] = x[i];
             data[i][1] = out[i];
-            System.out.println(name+" "+(int)x[i]+" "+out[i]);
+            //System.out.println(name+" "+(int)x[i]+" "+out[i]);
         }
         plot.makeplot1(data,"fuzzy",name,"x","y");
         return data;
     }
-    
-
+    public static ArrayList<double[][]> variablebach(double[] x,fuzzyvar var){
+        ArrayList<double[][]> out = new ArrayList<>();
+        String[] label = new String[var.terms.length];
+        int i = 0;
+        for (fuzzyterm term : var.terms) {
+            //System.out.println(term.type);
+            double[][] out1 = mfbach(x,term.value,term.type,term.name);
+            out.add(out1);
+            label[i] = term.name;
+            i++;
+        }
+        plot.makeplot2(out,label,var.name,"data","fuzzy membership");
+        return out;
+    }
+    public static void setbatch(double[][] x,fuzzyset set){
+        int i = 0;
+        for(fuzzyvar var : set.var){
+            System.out.println(set.var[i].name);
+            variablebach(x[i],set.var[i]);
+            i++;
+        }
+    }
 }
