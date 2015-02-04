@@ -18,17 +18,20 @@ public class GNPfuzzy {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        String[] label = {"gaussmf1","gaussmf2","sigmf1","sigmf2"};
         double[] var1 = {20,10};
-        double[][] f1 = fuzzy.mfbach(arrayfunction.bachsort(1,100),var1,"gauss");
-        double[] var2 = {50,20};
-        double[][] f2 = fuzzy.mfbach(arrayfunction.bachsort(1,100),var2,"gauss");
-        double[] var3 = {40,20};
-        double[][] f3 = fuzzy.mfbach(arrayfunction.bachsort(1,100),var3,"sig");
+        double[][] f1 = fuzzy.mfbach(arrayfunction.bachsort(1,100),var1,"gauss",label[0]);
+        double[] var2 = {60,20,60,5};
+        double[][] f2 = fuzzy.mfbach(arrayfunction.bachsort(1,100),var2,"gaussprod",label[1]);
+        double[] var3 = {80,0.2};
+        double[][] f3 = fuzzy.mfbach(arrayfunction.bachsort(1,100),var3,"sig",label[2]);
+        double[] var4 = {30,0.5,80,0.2};
+        double[][] f4 = fuzzy.mfbach(arrayfunction.bachsort(1,100),var4,"sigprod",label[3]);
         ArrayList<double[][]> dataplot = new ArrayList<>();
         dataplot.add(f1);
         dataplot.add(f2);
         dataplot.add(f3);
-        String[] label = {"f1","f2","f3"};
+        dataplot.add(f4);
         plot.makeplot2(dataplot,label,"fuzzy","data","fuzzy membership");
     }
 }
