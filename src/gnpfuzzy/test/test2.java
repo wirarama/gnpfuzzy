@@ -5,9 +5,7 @@
  */
 package gnpfuzzy.test;
 
-import gnpfuzzy.arrayfunction;
-import static gnpfuzzy.arrayfunction.bachsort2;
-import gnpfuzzy.fuzzy;
+import static gnpfuzzy.arrayfunction.bachsort3;
 import static gnpfuzzy.fuzzy.setbatch;
 import gnpfuzzy.fuzzyset;
 import gnpfuzzy.fuzzyterm;
@@ -42,8 +40,6 @@ public class test2 {
         fuzzyterm[] terms1 = {strong,normal,weak};
         power.terms = terms1;
         
-        fuzzy.variablebach(arrayfunction.bachsort(1,100),power);
-        
         fuzzyterm expensive = new fuzzyterm();
         expensive.name = "expensive";
         expensive.type = "gaussprod";
@@ -67,14 +63,12 @@ public class test2 {
         fuzzyterm[] terms2 = {expensive,average,cheap};
         price.terms = terms2;
         
-        fuzzy.variablebach(arrayfunction.bachsort(100,1000),price);
-        
         fuzzyset product = new fuzzyset();
-        fuzzyvar[] var = {power,price};
-        product.var = var;
+        fuzzyvar[] productvar = {power,price};  
+        product.var = productvar;
         double[][] database = new double[2][1000];
-        database[0] = bachsort2(1,100,100);
-        database[1] = bachsort2(100,1000,100);
-        //setbatch(database,product);
+        database[0] = bachsort3(1,1,100);
+        database[1] = bachsort3(100,10,100);
+        setbatch(database,product);
     }
 }

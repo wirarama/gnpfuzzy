@@ -123,11 +123,9 @@ public class fuzzy {
         return out;
     }
     public static void setbatch(double[][] x,fuzzyset set){
-        int i = 0;
-        for(fuzzyvar var : set.var){
+        for(int i=0;i<set.var.length;i++){
             System.out.println(set.var[i].name);
             variablebach(x[i],set.var[i]);
-            i++;
         }
     }
 }

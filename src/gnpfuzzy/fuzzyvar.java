@@ -10,14 +10,6 @@ package gnpfuzzy;
  * @author wirarama
  */
 public class fuzzyvar {
-    public static String name;
-    public static fuzzyterm[] terms;
-    
-    public static String[] getlabels(){
-        String[] out = new String[terms.length];
-        for(int i=0;i<terms.length;i++){
-            out[i] = terms[i].name;
-        }
-        return out;
-    }
+    public String name;
+    public fuzzyterm[] terms;
 }
