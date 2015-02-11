@@ -11,4 +11,6 @@ package gnpfuzzy;
  */
 public class fuzzyrule {
     public String name;
+    public int[][] terms;
+    public fuzzyvar conclusion;
 }
