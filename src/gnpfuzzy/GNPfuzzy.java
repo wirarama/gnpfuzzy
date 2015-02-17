@@ -5,7 +5,7 @@
  */
 package gnpfuzzy;
 
-import gnpfuzzy.test.test2;
+import java.io.IOException;
 
 /**
  *
@@ -15,9 +15,11 @@ public class GNPfuzzy {
 
     /**
      * @param args the command line arguments
+     * @throws java.io.IOException
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         // TODO code application logic here
-        test2.test2();
+        //test2.test2();
+        fuzzysupportcalc.test(8,7);
     }
 }
