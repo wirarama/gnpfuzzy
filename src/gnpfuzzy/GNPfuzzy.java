@@ -20,6 +20,7 @@ public class GNPfuzzy {
     public static void main(String[] args) throws IOException {
         // TODO code application logic here
         //test2.test2();
-        fuzzysupportcalc.test(8,7);
+        //fuzzysupportcalc.test(8,7);
+        kldiv.kldiv(100,10000,20,40);
     }
 }
