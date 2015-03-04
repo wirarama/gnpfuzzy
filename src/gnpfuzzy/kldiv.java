@@ -14,7 +14,7 @@ import net.jodk.lang.FastMath;
 public class kldiv {
     public static double kldiv(double mu1,double mu2,double sig1,double sig2){
         double out = 0;
-        out = FastMath.log(sig2/sig1)+(FastMath.pow(sig1,2)+FastMath.pow((mu1+mu2),2)/2*FastMath.pow(sig2,2))-1/2;
+        out = FastMath.log10(sig2/sig1)+(FastMath.pow(sig1,2)+FastMath.pow((mu1+mu2),2)/2*FastMath.pow(sig2,2))-1/2;
         System.out.println(out);
         return out;
     }

@@ -21,6 +21,9 @@ public class GNPfuzzy {
         // TODO code application logic here
         //test2.test2();
         //fuzzysupportcalc.test(8,7);
-        kldiv.kldiv(100,10000,20,40);
+        kldiv.kldiv(100,100,100,100);
+        //hellingerdist.hellingerdist(100,200,20,20);
+        hellingerdist.computeHellingerDist(100,10,100,10);
+        bhattadist.bhattadist(70,0.1,50,0.4);
     }
 }
