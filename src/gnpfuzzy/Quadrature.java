@@ -10,7 +10,7 @@ package gnpfuzzy;
  *
  * @author wirarama
  */
-public class AdaptiveQuadrature {
+public class Quadrature {
     private final static double EPSILON = 1e-1;
     static double f(double x) {
         return fuzzy.gaussprodmf(x, 12, 2, 12, 1);
@@ -36,4 +36,26 @@ public class AdaptiveQuadrature {
         else
             return adaptive(a, c) + adaptive(c, b);
     }
+    public static double simpson(double a, double b) {
+      int N = 10000;                    // precision parameter
+      double h = (b - a) / (N - 1);     // step size
+ 
+      // 1/3 terms
+      double sum = 1.0 / 3.0 * (f(a) + f(b));
+
+      // 4/3 terms
+      for (int i = 1; i < N - 1; i += 2) {
+         double x = a + h * i;
+         sum += 4.0 / 3.0 * f(x);
+      }
+
+      // 2/3 terms
+      for (int i = 2; i < N - 1; i += 2) {
+         double x = a + h * i;
+         sum += 2.0 / 3.0 * f(x);
+      }
+
+      return sum * h;
+   }
+
 }
