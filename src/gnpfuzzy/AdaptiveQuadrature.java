@@ -13,7 +13,6 @@ package gnpfuzzy;
 public class AdaptiveQuadrature {
     private final static double EPSILON = 1e-1;
     static double f(double x) {
-        //return Math.exp(- x * x / 2) / Math.sqrt(2 * Math.PI);
         return fuzzy.gaussprodmf(x, 12, 2, 12, 1);
     }
     // trapezoid rule
