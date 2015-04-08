@@ -22,8 +22,9 @@ public class GNPfuzzy {
         //test2.test2();
         //fuzzysupportcalc.test(8,7);
         //hellingerdist.computeHellingerDist(100,10,100,10);
-        System.out.println(Quadrature.trapezoid(10,20,100));
-        System.out.println(Quadrature.adaptive(10,20));
-        System.out.println(Quadrature.adaptive(10,20)/Quadrature.trapezoid(10,20,100));
+        //System.out.println(Quadrature.trapezoid(10,20,100));
+        //System.out.println(Quadrature.adaptive(10,20));
+        //System.out.println(Quadrature.adaptive(10,20)/Quadrature.trapezoid(10,20,100));
+        plotcomparison.silhoutteresult1();
     }
 }
